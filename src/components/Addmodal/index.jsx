@@ -37,7 +37,7 @@ const InputForm = styled.form`
 `;
 
 const InputContainer = styled.div`
-  border: 1px solid black;
+
 `;
 
 const NoteInput = styled.input`
@@ -49,7 +49,7 @@ const ButtonContainer = styled.div`
   width: 100%;
   height: 12vh;
   gap: 200px;
-  border: 1px solid black;
+
   position: relative;
 `;
 
