@@ -39,6 +39,10 @@ const Addbutton = styled.button`
   background: purple;
   border-radius: 50%;
   cursor: pointer;
+     &:hover{
+    transform: scale(1.1);
+    transition: 0.2s all ease-in-out;
+   }
   @media screen and (max-width: 1020px) {
     width: 3rem;
     height: 3rem;

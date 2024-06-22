@@ -65,6 +65,10 @@ const SearchButton = styled.button`
   outline: none;
   border: none;
   cursor: pointer;
+     &:hover{
+    transform: scale(1.1);
+    transition: 0.2s all ease-in-out;
+   }
   @media screen and (max-width: 1020px) {
     margin-right: 10px;
   }
@@ -112,6 +116,10 @@ const ToggleButton = styled.button`
   border: 1px solid purple;
   border-radius: 5px;
   cursor: pointer;
+       &:hover{
+    transform: scale(1.1);
+    transition: 0.2s all ease-in-out;
+   }
   @media screen and (max-width: 1020px) {
     width: 50px;
   }
