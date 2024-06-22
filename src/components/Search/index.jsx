@@ -14,6 +14,23 @@ const SearchInput = styled.input`
   outline: none;
   display: flex;
   justify-content: center;
+  @media screen and (max-width: 1020px) {
+    width: 90%;
+  }
+
+  @media screen and (max-width: 720px) {
+    width: 80%;
+    height: 80%;
+  }
+
+  @media screen and (max-width: 480px) {
+    width: 70%;
+    height: 60%;
+  }
+  @media screen and (max-width: 240px) {
+    width: 60%;
+    height: 40%;
+  }
 `;
 const Searchh = styled.div`
   width: 500px;
@@ -23,6 +40,23 @@ const Searchh = styled.div`
   border: 1px solid purple;
   border-radius: 5px;
   background: white;
+  @media screen and (max-width: 1020px) {
+    width: 500px;
+  }
+
+  @media screen and (max-width: 720px) {
+    width: 400px;
+    height: 80%;
+  }
+
+  @media screen and (max-width: 480px) {
+    width: 300px;
+    height: 60%;
+  }
+  @media screen and (max-width: 240px) {
+    width: 200px;
+    height: 40%;
+  }
 `;
 const SearchButton = styled.button`
   margin-right: 10px;
@@ -31,6 +65,20 @@ const SearchButton = styled.button`
   outline: none;
   border: none;
   cursor: pointer;
+  @media screen and (max-width: 1020px) {
+    margin-right: 10px;
+  }
+
+  @media screen and (max-width: 720px) {
+    margin-right: 9px;
+  }
+
+  @media screen and (max-width: 480px) {
+    margin-right: 7px;
+  }
+  @media screen and (max-width: 240px) {
+    margin-right: 5px;
+  }
 `;
 
 const DropDownMenu = styled.select`
@@ -38,6 +86,23 @@ const DropDownMenu = styled.select`
   border: 1px solid purple;
   border-radius: 5px;
   cursor: pointer;
+    @media screen and (max-width: 1020px) {
+    width: 50px;
+  }
+
+  @media screen and (max-width: 720px) {
+    width: 40px;
+    height: 80%;
+  }
+
+  @media screen and (max-width: 480px) {
+    width: 30px;
+    height: 60%;
+  }
+  @media screen and (max-width: 240px) {
+    width: 20px;
+    height: 40%;
+  }
 `;
 
 const DropDownList = styled.option``;
@@ -47,6 +112,23 @@ const ToggleButton = styled.button`
   border: 1px solid purple;
   border-radius: 5px;
   cursor: pointer;
+  @media screen and (max-width: 1020px) {
+    width: 50px;
+  }
+
+  @media screen and (max-width: 720px) {
+    width: 40px;
+    height: 80%;
+  }
+
+  @media screen and (max-width: 480px) {
+    width: 30px;
+    height: 60%;
+  }
+  @media screen and (max-width: 240px) {
+    width: 20px;
+    height: 40%;
+  }
 `;
 
 const Search = ({ toggleTheme }) => {
