@@ -150,6 +150,7 @@ const Search = ({ toggleTheme, onSearch }) => {
 
   const handleSearch = () => {
     onSearch(query.trim()); // Pass trimmed query to parent component
+    setQuery('');
   };
   return (
     <SearchContainer>
