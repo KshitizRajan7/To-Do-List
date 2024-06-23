@@ -160,7 +160,8 @@ const AddModal = ({ closeModal, addTask }) => {
   const [task, setTask] = useState(""); //initializing the state as '' for avoiding being null or undefined
   const AddTask = (e) => {
     e.preventDefault(); //preventing the rerendering of the form and data being disappeared.
-    addTask(task); // this will pass the tasks to the [...setAddTask,task] that is using spread Operator in App.jsx.
+
+    {task == '' ? alert('Fill the form with your task.'):addTask(task)} // this will pass the tasks to the [...setAddTask,task] that is using spread Operator in App.jsx.
     setTask(""); //sets the input box empty for immediate another use
   };
 
