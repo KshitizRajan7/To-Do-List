@@ -146,7 +146,7 @@ const ApplyButton = styled.button`
 `;
 
 const AddModal = ({ closeModal, addTask }) => {
-  //props used by using grounding method
+  //props used by using prop drilling method
   const [task, setTask] = useState(""); //initializing the state as '' for avoiding being null or undefined
   const AddTask = (e) => {
     e.preventDefault(); //preventing the rerendering of the form and data being disappeared.
