@@ -52,16 +52,16 @@ const DeleteButton = styled.button`
   background: transparent;
   border: none;
   outline: none;
+  cursor: pointer;
   &:hover{
-  transfrom : scale (1.2);
-  transitiion : 0.2s all ease-in-out; 
+  transform : scale(1.2);
+  transition : 0.2s all ease-in-out; 
 `;
 
 const Tasks = ({ taskList, deleteTask }) => {
   return (
     <TaskListContainer>
-      <TaskLists>
-      
+      <TaskLists>  
         {taskList.length == '' ? "No task available" : taskList.map((task, index) => ( // mapping the added tasks and using index to use as key that requires unique identity
           <Task key={index}>    
             <Checkbox type="checkbox" />
