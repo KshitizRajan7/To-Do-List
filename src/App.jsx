@@ -36,6 +36,7 @@ const getLocalItem = () => {
 const App = () => {
   const [taskList, setTaskList] = useState(getLocalItem()); //initializing the tasklist with the local items (array)
   const [currentTheme, setCurrentTheme] = useState(darkMode); //initializing with darkmode
+  const [searchQuery, setSearchQuery] = useState("");
 
   // useEffect(() => {
   //   const fetchData = async () => {
@@ -73,13 +74,18 @@ const App = () => {
     setTaskList([...taskList, task]); //adding task in the tasklist, the task is being retrieved from AddModal.jsx
   };
 
+
+  const handleSearch = (query) => {
+    setSearchQuery(query);
+  };
+
   return (
     <ThemeProvider theme={currentTheme}>
       <Body>
         <Container>
           <Header />
-          <Search toggleTheme={toggleTheme} />
-          <Tasks taskList={taskList} deleteTask={deleteTask} />
+          <Search toggleTheme={toggleTheme} onSearch={handleSearch} />
+          <Tasks taskList={taskList} deleteTask={deleteTask} searchQuery={searchQuery} />
           <Add addTask={addTask} />
         </Container>
       </Body>

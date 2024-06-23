@@ -58,25 +58,33 @@ const DeleteButton = styled.button`
   transition : 0.2s all ease-in-out; 
 `;
 
-const Tasks = ({ taskList, deleteTask }) => {
+const Tasks = ({ taskList, deleteTask, searchQuery }) => {
+  const filteredTasks = taskList.filter((task) =>
+    task.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   return (
     <TaskListContainer>
       <TaskLists>  
-        {taskList.length == '' ? "No task available" : taskList.map((task, index) => ( // mapping the added tasks and using index to use as key that requires unique identity
-          <Task key={index}>    
+      {filteredTasks.length === 0 ? 
+        "No tasks found"
+       : (
+        filteredTasks.map((task, index) => (
+          <Task key={index}>
             <Checkbox type="checkbox" />
             {task}
             <ButtonContainer>
               <DeleteButton
-                onClick={() => { //using the deleteTask props that is defined in the app.jsx
+                onClick={() => {
                   deleteTask(index);
                 }}
               >
-                <RxCross2/>
+                <RxCross2 />
               </DeleteButton>
             </ButtonContainer>
           </Task>
-        ))}
+        ))
+      )}
       </TaskLists>
     </TaskListContainer>
   );

@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import styled, { ThemeContext } from "styled-components";
 import { FaSearch } from "react-icons/fa";
 import { FiMoon, FiSun } from "react-icons/fi";
@@ -139,15 +139,23 @@ const ToggleButton = styled.button`
   }
 `;
 
-const Search = ({ toggleTheme }) => {
+const Search = ({ toggleTheme, onSearch }) => {
   const themeContext = useContext(ThemeContext); //using useContext to pass props through the component tree directly
   const ToggleIcon = themeContext === darkMode ? FiSun : FiMoon; //will change the icon in every click event according the mode.
+  const [query, setQuery] = useState("");
 
+  const handleInputChange = (event) => {
+    setQuery(event.target.value); //it could be passed directly in the input element but this will be an organized way
+  };
+
+  const handleSearch = () => {
+    onSearch(query.trim()); // Pass trimmed query to parent component
+  };
   return (
     <SearchContainer>
       <Searchh>
-        <SearchInput />
-        <SearchButton>
+        <SearchInput type="text" value={query} onChange={handleInputChange} placeholder='Search..' />
+        <SearchButton onClick={handleSearch}>
           <FaSearch />
         </SearchButton>
       </Searchh>
